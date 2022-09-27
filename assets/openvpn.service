@@ -1,0 +1,16 @@
+[Unit]
+Description=OpenVPN Service
+Documentation=https://openvpn.net
+After=network.target nss-lookup.target
+
+[Service]
+User=root
+NoNewPrivileges=true
+ExecStart=/usr/sbin/openvpn --config /etc/openvpn/server.conf
+Restart=on-failure
+RestartPreventExitStatus=23
+LimitNPROC=10000
+LimitNOFILE=1000000
+
+[Install]
+WantedBy=multi-user.target

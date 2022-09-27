@@ -1,0 +1,13 @@
+[Unit]
+Description=OpenVPN IpTables Service
+Documentation=https://openvpn.net
+Before=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/add-openvpn-iptables
+ExecStop=/usr/bin/del-openvpn-iptables
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

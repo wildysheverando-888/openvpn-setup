@@ -321,6 +321,11 @@ systemctl enable openvpn-iptables
 systemctl stop openvpn-iptables
 systemctl start openvpn-iptables
 
+echo 'net.ipv4.ip_forward=1
+net.ipv6.conf.all.forwarding=1' > /etc/sysctl.conf
+
+sysctl -p 
+
 clear
 echo -e "${INFO} OpenVPN Server has installed !"
 echo "Type: openvpn-setup --adduser to create a user"

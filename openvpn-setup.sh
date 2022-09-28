@@ -183,7 +183,6 @@ plugin /usr/lib/openvpn/openvpn-plugin-auth-pam.so login
 verify-client-cert none
 username-as-common-name
 topology subnet
-local $Public_IPv4
 server 123.123.123.0 255.255.255.0
 END
 if [[ $IPV6 == "true" ]]; then
@@ -215,7 +214,6 @@ plugin /usr/lib/openvpn/openvpn-plugin-auth-pam.so login
 verify-client-cert none
 username-as-common-name
 topology subnet
-local $Public_IPv4
 server 123.123.123.0 255.255.255.0
 END
 if [[ $IPV6 == "true" ]]; then

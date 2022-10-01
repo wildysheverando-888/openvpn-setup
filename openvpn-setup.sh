@@ -2,7 +2,7 @@
 # ====================================================
 # Desc   : Simple bash script to setup OpenVPN Server
 # Author : Wildy Sheverando
-# Github : https://github.com/wildysheverando-888
+# Github : https://github.com/wildysheverando2022
 # ====================================================
 
 mode=$1

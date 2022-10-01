@@ -364,6 +364,11 @@ clear
 echo -e "${INFO} $user has been deleted !"
 }
 
+function restart () {
+    systemctl restart openvpn > /dev/null 2>&1
+    systemctl restart openvpn-iptables > /dev/null 2>&1
+}
+
 function _main_() {
     if [[ $mode == "--install" ]]; then
         install
@@ -371,12 +376,15 @@ function _main_() {
         add_user
     elif [[ $mode == "--deluser" ]]; then
         del_user
+    elif [[ $mode == "--restart" ]]; then
+        restart
     else
         clear
         echo -e "Command: "
         echo -e "         openvpn-setup --install : install openvpn"
         echo -e "         openvpn-setup --adduser : create new user"
         echo -e "         openvpn-setup --deluser : delete an exist user"
+        echo -e "         openvpn-setup --restart : Restart openvpn server"
         exit 1
     fi
 }
